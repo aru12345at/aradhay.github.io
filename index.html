@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e50914">
+  <title>Aradhay Tabhane | My World</title>
+  <meta name="description" content="A personal corner of the internet belonging to Aradhay Tabhane.">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:#070707;color:#f7f7f7;line-height:1.6;overflow-x:hidden
+    }
+    a{color:inherit;text-decoration:none}
+    ::selection{background:#e50914;color:#fff}
+    .glow{position:fixed;width:320px;height:320px;border-radius:50%;background:#e50914;filter:blur(130px);opacity:.12;pointer-events:none;z-index:-1}
+    .glow.one{top:8%;left:-140px}.glow.two{right:-160px;top:55%;opacity:.08}
+    nav{
+      position:fixed;top:0;left:0;width:100%;z-index:20;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:18px 7%;background:rgba(7,7,7,.68);backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(255,255,255,.07)
+    }
+    .logo{font-weight:900;letter-spacing:2px}.logo span{color:#e50914}
+    nav .links{display:flex;gap:25px;font-size:.9rem;color:#cfcfcf}
+    nav .links a:hover{color:#fff}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:40px;padding:110px 7% 70px;position:relative}
+    .eyebrow{color:#e50914;text-transform:uppercase;letter-spacing:4px;font-size:.78rem;font-weight:800;margin-bottom:14px}
+    h1{font-size:clamp(3.4rem,8vw,7.5rem);line-height:.9;letter-spacing:-5px}
+    h1 span{color:#e50914}
+    .hero p{max-width:610px;color:#b9b9b9;font-size:1.08rem;margin:25px 0}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 19px;border-radius:999px;font-weight:800;border:1px solid #333;transition:.25s}
+    .btn.primary{background:#e50914;border-color:#e50914}.btn:hover{transform:translateY(-3px);box-shadow:0 10px 35px rgba(229,9,20,.18)}
+    .btn.secondary{background:#111}
+    .hero-art{display:flex;justify-content:center}
+    .photo-wrap{width:min(480px,88vw);aspect-ratio:1/1;position:relative;border-radius:34px;padding:8px;background:linear-gradient(145deg,#e50914,transparent 48%,#333)}
+    .photo-wrap img{width:100%;height:100%;object-fit:cover;border-radius:28px;display:block}
+    .tag{position:absolute;right:-14px;bottom:25px;background:#111;border:1px solid #333;padding:11px 16px;border-radius:16px;font-size:.8rem;font-weight:800;box-shadow:0 12px 35px #000}
+    section{padding:100px 7%}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:35px}
+    .section-head h2{font-size:clamp(2rem,5vw,3.7rem);line-height:1}
+    .section-head p{color:#888;max-width:430px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(145deg,#121212,#0c0c0c);border:1px solid #252525;border-radius:24px;padding:26px;transition:.25s}
+    .card:hover{transform:translateY(-6px);border-color:#4a4a4a}
+    .icon{font-size:2rem;margin-bottom:12px}
+    .card h3{margin-bottom:7px}.muted{color:#999}
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .fact{padding:22px;border-radius:20px;background:#101010;border:1px solid #222}
+    .fact b{display:block;font-size:1.3rem;margin-top:6px}.fact small{color:#777}
+    .travel{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .place{min-height:230px;padding:26px;border-radius:25px;border:1px solid #242424;background:
+      radial-gradient(circle at 80% 20%,rgba(229,9,20,.16),transparent 30%),#101010}
+    .place h3{font-size:1.8rem}.place p{color:#999;margin-top:8px}
+    .quote{padding:42px;border-radius:28px;background:#e50914;color:#fff;text-align:center}
+    .quote p{font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;line-height:1.15}
+    footer{padding:45px 7%;border-top:1px solid #202020;color:#777;display:flex;justify-content:space-between;gap:20px}
+    footer strong{color:#fff}
+    .reveal{opacity:0;transform:translateY(24px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+    @media(max-width:850px){
+      nav .links{display:none}
+      .hero{grid-template-columns:1fr;padding-top:130px;text-align:center}
+      .hero p{margin-left:auto;margin-right:auto}.buttons{justify-content:center}
+      .grid,.facts{grid-template-columns:1fr 1fr}.travel{grid-template-columns:1fr}
+      h1{letter-spacing:-3px}
+    }
+    @media(max-width:520px){
+      section{padding:75px 5%}.hero{padding-left:5%;padding-right:5%}
+      .grid,.facts{grid-template-columns:1fr}.photo-wrap{border-radius:25px}.photo-wrap img{border-radius:19px}
+      footer{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <div class="glow one"></div><div class="glow two"></div>
+
+  <nav>
+    <a class="logo" href="#home">ARADHAY<span>.</span></a>
+    <div class="links">
+      <a href="#about">About</a><a href="#interests">Interests</a><a href="#favorites">Favorites</a>
+      <a href="#travel">Travel</a><a href="#gallery">Gallery</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="reveal">
+        <div class="eyebrow">Welcome to my world</div>
+        <h1>ARADHAY<br><span>TABHANE</span></h1>
+        <p>Just a Class 9 student who loves sports, nature, travel, technology, music, games—and of course, good food.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#about">Explore my world ↓</a>
+          <a class="btn secondary" href="#favorites">My favorites</a>
+        </div>
+      </div>
+      <div class="hero-art reveal">
+        <div class="photo-wrap">
+          <img src="hero.png" alt="Anime-style illustration of Aradhay in a green landscape">
+          <div class="tag">🌿 Nature lover</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head reveal">
+        <h2>A little<br>about me.</h2>
+        <p>This isn't a resume. It's simply a small digital space that shows the things I enjoy.</p>
+      </div>
+      <div class="card reveal">
+        <p class="muted" style="font-size:1.1rem">
+          Hi, I'm <strong style="color:#fff">Aradhay Tabhane</strong>. I'm a Class 9 student from Maharashtra.
+          I really enjoy being around nature and exploring new places. Sports are a big part of what I like,
+          and I'm also curious about AI, technology and all the interesting things happening in the tech world.
+          When I'm not doing that, you'll probably find me listening to music, gaming, travelling or looking for something tasty to eat. 😋
+        </p>
+      </div>
+    </section>
+
+    <section id="interests">
+      <div class="section-head reveal">
+        <h2>Things<br>I enjoy.</h2>
+        <p>A few things that make my free time more fun.</p>
+      </div>
+      <div class="grid">
+        <div class="card reveal"><div class="icon">🏏</div><h3>Sports</h3><p class="muted">Cricket is my favorite, but I enjoy sports in general.</p></div>
+        <div class="card reveal"><div class="icon">🌿</div><h3>Nature</h3><p class="muted">I love greenery, hills, fresh air and beautiful landscapes.</p></div>
+        <div class="card reveal"><div class="icon">🤖</div><h3>Technology</h3><p class="muted">AI, new technology and discovering how things work interest me.</p></div>
+        <div class="card reveal"><div class="icon">🎮</div><h3>Gaming</h3><p class="muted">Free Fire MAX is one of the games I enjoy playing.</p></div>
+        <div class="card reveal"><div class="icon">🎵</div><h3>Music</h3><p class="muted">I enjoy listening to music, especially Arijit Singh.</p></div>
+        <div class="card reveal"><div class="icon">🍕</div><h3>Food</h3><p class="muted">No fixed favorite—I'm basically a foodie. 😋</p></div>
+      </div>
+    </section>
+
+    <section id="favorites">
+      <div class="section-head reveal">
+        <h2>My<br>favorites.</h2>
+        <p>The current lineup of things I like.</p>
+      </div>
+      <div class="facts">
+        <div class="fact reveal"><small>COLOR</small><b>🔴 Red</b></div>
+        <div class="fact reveal"><small>SINGER</small><b>🎙️ Arijit Singh</b></div>
+        <div class="fact reveal"><small>SONG</small><b>🎧 After Dark × Sweat Weather</b></div>
+        <div class="fact reveal"><small>MOVIE</small><b>🎬 Dhurandhar 2</b></div>
+        <div class="fact reveal"><small>GAME</small><b>🎮 Free Fire MAX</b></div>
+        <div class="fact reveal"><small>IPL TEAM</small><b>🔴 RCB</b></div>
+        <div class="fact reveal"><small>CRICKETER</small><b>🏏 Virat Kohli</b></div>
+        <div class="fact reveal"><small>VIBE</small><b>🌿 Explore & enjoy</b></div>
+      </div>
+    </section>
+
+    <section id="travel">
+      <div class="section-head reveal">
+        <h2>Places &<br>memories.</h2>
+        <p>Exploring somewhere new is always a good idea.</p>
+      </div>
+      <div class="travel">
+        <div class="place reveal"><h3>🌄 Tamia Hills</h3><p>One of my favorite places—beautiful hills, greenery and amazing views.</p></div>
+        <div class="place reveal"><h3>🧳 My travels</h3><p>Bhopal • Jabalpur • Tamia Hills • Hyderabad • Gondia • and many more places.</p></div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-head reveal">
+        <h2>My<br>gallery.</h2>
+        <p>One photo for now. More memories can be added anytime.</p>
+      </div>
+      <div class="photo-wrap reveal" style="width:min(650px,100%);margin:auto;aspect-ratio:1/1">
+        <img src="hero.png" alt="Aradhay's featured image">
+      </div>
+    </section>
+
+    <section>
+      <div class="quote reveal">
+        <p>“This is my little corner of the internet.”</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>ARADHAY.</strong> Made as my personal space on the web.</div>
+    <div>© <span id="year"></span> Aradhay</div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const items = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, {threshold:.12});
+    items.forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
